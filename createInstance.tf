@@ -6,7 +6,7 @@ resource "aws_key_pair" "levelkey" {
 resource "aws_instance" "MyFirstInstnace" {
   ami           = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.levelkey.key_name
+  key_name      = aws_key_pair.level.key_name
 
   tags = {
     Name = "custom_instance"

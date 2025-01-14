@@ -5,11 +5,13 @@ variable "AWS_SECRET_KEY" {}
 variable "AWS_SESSION_TOKEN" {}
 
 variable "AWS_REGION" {
+    type = string
+    default = "us-west-2"
 }
 
 variable "Security_Group" {
-    type = list
-    default = ["sg-24076", "sg-90890", "sg-456789"]
+    type = string
+    default = "sg-06c1daca589feedab"
 }
 
 variable "AMIS" {
@@ -20,11 +22,11 @@ variable "AMIS" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "levelkey"
+  default = "level"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "levelkey.pub"
+  default = "level.pub"
 }
 
 variable "INSTANCE_USERNAME" {

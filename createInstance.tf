@@ -1,7 +1,7 @@
 
 resource "aws_instance" "MyFirstInstnace" {
   count         = 1
-  ami           = "ami-05d38da78ce859165"
+  ami           = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
 
   tags = {

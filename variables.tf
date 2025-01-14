@@ -15,7 +15,18 @@ variable "Security_Group" {
 variable "AMIS" {
     type = map
     default = {
-        us-west-2 = "ami-0b4a21432a0c9c1ab"
-        us-east-1 = "ami-05576a079321f21f8"
+        us-west-2 = "ami-05d38da78ce859165"
     }
+}
+
+variable "PATH_TO_PRIVATE_KEY" {
+  default = "levelkey"
+}
+
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "levelkey.pub"
+}
+
+variable "INSTANCE_USERNAME" {
+  default = "ubuntu"
 }

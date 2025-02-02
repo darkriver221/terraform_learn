@@ -9,7 +9,7 @@ module "ec2_cluster" {
   source = "github.com/terraform-aws-modules/terraform-aws-ec2-instance.git"
 
   name          = "${substr(var.environment, 0, 3)}-${count.index+1}"
-  ami           = "ami-00c257e12d6828491"
+  ami           = var.environment == "Production" ? var.ami_pro:var.ami_dev
   instance_type = "t2.micro"
   subnet_id     = "subnet-02384c3e3b8caab96"
 

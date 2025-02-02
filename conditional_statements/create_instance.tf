@@ -8,12 +8,12 @@ provider "aws" {
 module "ec2_cluster" {
   source = "github.com/terraform-aws-modules/terraform-aws-ec2-instance.git"
 
-  name          = "prod-${count.index+1}"
+  name          = "${substr(var.environment, 0, 3)}-${count.index+1}"
   ami           = "ami-00c257e12d6828491"
   instance_type = "t2.micro"
   subnet_id     = "subnet-02384c3e3b8caab96"
 
-  instance_count = var.environment == "Production" ? 2:1
+  count = var.environment == "Production" ? 2:1
 
   tags = {
     Terraform   = "true"

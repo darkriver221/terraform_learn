@@ -9,26 +9,22 @@ variable "AWS_REGION" {
     default = "us-west-2"
 }
 
-variable "Security_Group" {
-    type = string
-    default = "sg-06c1daca589feedab"
+variable "public_key_path" {
+  description = "Public key path"
+  default = "~/.ssh/levelup_key.pub"
 }
 
-variable "AMIS" {
-    type = map
-    default = {
-        us-west-2 = "ami-05d38da78ce859165"
-    }
+variable "instance_ami" {
+  description = "AMI for aws EC2 instance"
+  default = "ami-00c257e12d6828491"
 }
 
-variable "PATH_TO_PRIVATE_KEY" {
-  default = "level"
+variable "instance_type" {
+  description = "type for aws EC2 instance"
+  default = "t2.micro"
 }
 
-variable "PATH_TO_PUBLIC_KEY" {
-  default = "level.pub"
-}
-
-variable "INSTANCE_USERNAME" {
-  default = "ubuntu"
+variable "environment_tag" {
+  description = "Environment tag"
+  default = "Production"
 }
